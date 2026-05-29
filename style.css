@@ -1,60 +1,16 @@
-/* --- 1. 核心修复：建立弹性盒模型，确保页面至少占满一屏高度 --- */
-html {
-    -webkit-text-size-adjust: 100%; 
-    -moz-text-size-adjust: 100%; 
-    -ms-text-size-adjust: 100%;
-    height: 100%; /* 确保 HTML 占满全高 */
-}
-
-body {
-    background-color: #fdfdfd; 
-    color: #2c3c4c; 
-    margin: 0; 
-    font-size: 13px;
-    
-    /* 开启 Flex 布局，让子元素垂直排列 */
-    display: flex;
-    flex-direction: column;
-    min-height: 100%; /* 让 body 至少和浏览器窗口一样高 */
-}
-
-/* --- 2. 核心修复：让内容区域自动撑开，把 footer 挤到最底下 --- */
-.content {
-    max-width: 748px; 
-    padding-left: 16px; 
-    padding-right: 16px; 
-    margin: auto; 
-    margin-top: 48px;
-    
-    /* 关键属性：flex: 1 会自动吃掉屏幕多余的空白，把 footer 顶到最下面 */
-    flex: 1; 
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* --- 3. 核心修复：确保 footer 宽度正常并不被压缩 --- */
-.footer {
-    background-color: #345; 
-    width: 100%;
-    flex-shrink: 0; /* 防止 footer 在高页面中被挤压 */
-}
-
-/* ==========================================================================
-   以下为你原本的其余样式，未做逻辑改动，保持原样
-   ========================================================================== */
-
+html {-webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+body {background-color: #fdfdfd; color: #2c3c4c; margin: 0; font-size: 13px;}
 h1 {margin-bottom: 32px; font-size: 2.6em;}
 h2 {margin-top: 48px;}
 h1, h2 {color: #234;}
 h3, h4, h5 {color: #345;}
 h1, h2, h3, h4, h5, a, p, span, body, div {font-weight: normal; font-family: 'Lato', Verdana, Helvetica, sans-serif;}
-
 .header {background: linear-gradient(to bottom, #f5f5f8 10%, #f1f1f5 90%); width: 100%; padding-top: 16px; padding-bottom: 32px;}
 .header-profile-picture, .header-text {display: inline-block;}
 .header-name h1 {margin: 0;}
 .header-subtitle {margin-bottom: 12px;}
 .header-profile-picture {width: 100px; height: 100px; margin-right: 12px; border-radius: 50%; background-image: url(files/me-cut-new-2.png); background-position: center; background-size: contain; background-repeat: no-repeat;}
-
+.content {max-width: 748px; padding-left: 16px; padding-right: 16px; margin: auto; margin-top: 48px;}
 .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
 a {color: #2471a3; text-decoration: none;}
 a:focus, a:hover {color: #f09228;}
@@ -73,7 +29,7 @@ p {line-height: 1.5em;}
 .publication.highlight {background-color: #fff8df; width: 100%; padding-top: 8px; padding-bottom: 8px; border-radius: 4px;}
 .press {width: 100px; height: 80px; border: 1px solid #def; margin-right: 12px; background-size: cover;}  
 .img-contain {background-size: contain !important;}
-
+.footer {background-color: #345; width: 100%}
 .footer-content {color: #fff; font-size: 10px; padding: 6px 0; max-width: 748px; margin: auto;}
 .footer-content a {color: #fff; text-decoration: underline;}
 .footer-content a:hover {color: #f09228 !important;}
